@@ -35,7 +35,7 @@ jobs:
       # In the first job
       - uses: actions/cache@v3
         with:
-          path: test.txt
+          path: test/
           key: test-key
 
 
@@ -54,11 +54,11 @@ jobs:
       # In the second job
       - uses: actions/cache@v3
         with:
-          path: test.txt
+          path: test/
           key: test-key  # Must be the same key you specified in the first job
              
       - name: Run a one-line script
         run: |
-             echo print test.txt 
-             cat test.txt
+             echo print test/test.txt 
+             cat test/test.txt
   
