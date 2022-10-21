@@ -27,12 +27,12 @@ jobs:
       
       - uses: actions/cache@v3
         with:
-             path: /tmp
+             path: /home/runner
              key: test.txt
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world! > /tmp/test.txt
+        run: echo Hello, world! > /home/runner/test.txt
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -48,11 +48,11 @@ jobs:
     steps:
       - uses: actions/cache@v3
         with:
-             path: /tmp
+             path: /home/runner
              key: test.txt
            # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-             echo print /tmp/test.txt 
-             cat /tmp/test.txt
+             echo print /home/runner/test.txt 
+             cat /home/runner/test.txt
   
