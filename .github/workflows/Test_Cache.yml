@@ -31,10 +31,10 @@ jobs:
           echo print /home/runner/test.txt 
           cat /home/runner/test.txt
         
-      - uses: actions/cache@v3
+      - uses: actions/upload-artifact@v3
         with:
-             path: /home/runner
-             key: test.txt
+             name: my-artifact
+             path: /home/runner/test.txt
 
 
       # Runs a set of commands using the runners shell
@@ -49,11 +49,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/cache@v3
+      - uses: actions/download-artifact@v3
         with:
-             path: /home/runner
-             key: test.txt
-           # Runs a single command using the runners shell
+             name: my-artifact
       - name: Run a one-line script
         run: |
              echo print /home/runner/test.txt 
