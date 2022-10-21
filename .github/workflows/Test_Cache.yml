@@ -52,6 +52,8 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
              name: my-artifact
+             path: /home/runner/test.txt
+             
       - name: Run a one-line script
         run: |
              echo print /home/runner/test.txt 
