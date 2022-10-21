@@ -36,7 +36,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: test/
-          key: test-key
+          key: cache-key
 
 
       # Runs a set of commands using the runners shell
@@ -55,7 +55,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: test/
-          key: test-key  # Must be the same key you specified in the first job
+          key: cache-key  # Must be the same key you specified in the first job
              
       - name: Run a one-line script
         run: |
