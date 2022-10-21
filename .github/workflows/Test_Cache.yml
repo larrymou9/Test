@@ -31,7 +31,7 @@ jobs:
           echo print /home/runner/test.txt 
           cat /home/runner/test.txt
         
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v2
         with:
              name: my-artifact
              path: /home/runner/test.txt
@@ -49,7 +49,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v2
         with:
              name: my-artifact
       - name: Run a one-line script
